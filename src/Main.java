@@ -1,24 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author estudiante103
- */
 public class Main {
     public static void main(String[] args) {
+        Libro libro = new Libro("Miguel de Cervantes", "El Quijote", 10, 11);
 
-        
-        Libro libro = new Libro("El Quijote", "Miguel de Cervantes", 1605);
-        
-        String autor = libro.autor;
-        
-        
+        System.out.println("Información del libro:");
+        libro.imprimirLibro();
 
+        System.out.println("\nRealizando préstamo:");
+        if (libro.prestamo()) {
+            System.out.println("Préstamo realizado con éxito");
+        } else {
+            System.out.println("No se pudo realizar el préstamo");
+        }
 
- 
+        System.out.println("Estado actualizado:");
+        libro.imprimirLibro();
+
+        System.out.println("Realizando devolución:");
+        if (libro.devolucion()) {
+            System.out.println("Devolución realizada con éxito");
+        } else {
+            System.out.println("No se pudo realizar la devolución");
+        }
+
+        System.out.println("Estado final:");
+        libro.imprimirLibro();
     }
 }
